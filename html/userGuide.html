@@ -1,0 +1,95 @@
+﻿<html>
+<head>
+  <link rel="stylesheet" href="../css/book.css">
+
+ <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+</head>
+<title>e-Request | User's Guide</title>
+<body>
+<div id="wrapper">
+    <div id="container">
+
+        <section class="open-book">
+            <header>
+                <h1>ระบบยื่นคำขอข้อมูลข่าวสารของราชการ (e-Request)</h1>
+                <h6>MNRE-SLC-007</h6>
+            </header>
+            <article>
+    <h2 class="chapter-title">คู่มือผู้ใช้งานระบบ e-Request</h2>
+
+<p>
+ระบบรับคำขอข้อมูลข่าวสารของกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม (e-Request) ใช้ยื่นคำขอข้อมูลข่าวสารของกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม โดยไม่ต้องเดินทางมายื่นคำขอ ณ ที่ทำการของหน่วยงาน แต่สามารถยื่นคำขอแบบออนไลน์ โดยโปรแกรมช่วยพิมพ์คำขอ ตามแบบคำขอข้อมูลข่าวสาร เพื่อให้สามารถคัดลอกและส่งอีเมลถึงหน่วยงานต่าง ๆ ได้ง่าย โดยไม่ต้องจดจำอีเมลของหน่วยงานต่าง ๆ แต่อย่างใด</p><br>
+<dd>
+<strong>วิธีใช้งาน</strong>
+</dd>
+
+<p>
+<p><b>ขั้นตอนการยื่นคำขอ</b> เป็นไปตาม flowchart เริ่มจากการเข้าสู่ระบบ แล้วอ่านประกาศความเป็นส่วนตัว (privacy notice) ซึ่งเป็น<mark>ลิงค์</mark> อยู่ด้านบนของหน้าต่าง จากนั้นกรอกข้อมูลให้ถูกต้องและครบถ้วน แล้วกดปุ่ม <mark>"พิมพ์คำขอ "</mark> จะมีร่างคำขอปรากฏในกล่องข้อความ ให้ตรวจสอบความถูกต้อง โดยสามารถพิมพ์แก้ไขเพิ่มเติมข้อความได้ตามความเหมาะสม เมื่อเรียบร้อยแล้ว กดปุ่ม "คัดลอก" แล้วส่งอีเมล โดยกดปุ่ม<mark> "iOS"</mark> หรือ <mark>"Gmail"</mark> ระบบจะนำท่านไปยังหน้าอีเมล ให้ท่านวางข้อความที่คัดลอกไว้ แล้วส่งอีเมลตามปกติ  
+</p>
+<p>อนึ่ง ตาม<a href='../pdf/mati28Dec2547.pdf'>มติคณะรัฐมนตรี เมื่อวันที่ 28 ธันวาคม 2547 </a>หน่วยงานที่ได้รับคำขอ จะต้องแจ้งผลการพิจารณาคำขอข้อมูลข่าวสารให้ผู้ขอทราบ ภายใน 15 วัน นับแต่วันที่ได้รับคำขอ 
+</p>
+<p>กรณีหน่วยงานยังไม่แจ้งผลการพิจารณา ผู้ขออาจติดตามความคืบหน้า โดยกดปุ่ม <mark>"Tracking"</mark> ซึ่งมีวิธีใช้ตาม<a href='userGuide2.html'>คู่มือผู้ใช้ระบบ e-Tracking</a></p>
+
+   <div id="chart">
+      st=>start: เข้าระบบ e-Request|past:>../index.html[blank]
+      e=>end: ติดตามความคืบหน้า:>http://lib.mnre.go.th/info/html/track.html
+
+      op1=>operation: อ่าน Privacy Notice|past:>http://lib.mnre.go.th/info/html/pdpa.html
+
+      op2=>operation: กรอกข้อมูล|current
+
+      op3=>operation: กดปุ่มพิมพ์|current
+
+      op4=>operation: ตรวจร่างคำขอ|current
+
+      op5=>operation: กดปุ่มส่งอีเมล|current
+
+      op6=>operation: วางข้อความและส่งอีเมล|current
+
+      c2=>condition: ครบถ้วน?|approved:>
+
+      io=>inputoutput: กดปุ่มคัดลอก|request
+
+      para=>parallel: ตรวจสอบลิงค์บนเมนู
+
+      st->op1->op2->op3->op4(right)->c2
+
+      c2(true)->io->op5->op6->e
+
+      c2(false)->op2
+
+    </div>
+
+<br>
+<center>****************</center><br>
+
+
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>1</li>
+                    <li>2</li>
+                </ol>
+            </footer>
+        </section>
+
+    </div>
+</div>
+
+ <script>
+      function myFunction(event, node) {
+        console.log("You just clicked this node:", node);
+      }
+    </script>
+		<script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/raphael/raphael.js"></script>
+    <script src="../js/flowchart.js"></script>
+		<script>
+		$('#chart').flowChart();
+		</script>
+
+</body>
+</html>
