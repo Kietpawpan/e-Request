@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../css/book.css">
 <title>e-Request | Workflow</title>
@@ -29,15 +29,12 @@ height: scrollHeight;
     <h2 class="chapter-title">แนวคิดการ Update <br> e-Tracking</h2>
 
 <p>
-การปรับปรุง (update) ข้อมูลสถานะของคำขอข้อมูลข่าวสารในระบบ e-Tracking ถูกออกแบบให้สามารถดำเนินการผ่านหน้าเว็บ update.php</p><br>
-<dd>
-<strong>ผังงาน</strong>
-</dd>
+การปรับปรุง (update) ข้อมูลสถานะของคำขอข้อมูลข่าวสารในระบบ e-Tracking จะดำเนินการโดยเจ้าหน้าที่ศูนย์บริการร่วมกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม ผ่านระบบ Backend ที่ควบคุมการแก้ไข source code ของฐานข้อมูลในระบบติดตามสถานะคำขอข้อมูลข่าวสารของกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม (e-Tracking) แบบออนไลน์ โดยไม่ต้องเข้าถึงเครื่องแม่ขายผ่านโปรแกรม Remote Desktop Connection ทั้งนี้ เพื่อป้องกันความคลาดเคลื่อนในการแก้ไข source code ดังกล่าว และอำนวยความสะดวกในการปรับปรุงฐานข้อมูลสถานะคำขอโดยเจ้าหน้าที่ผู้ปฏิบัติงานโดยไม่ต้องอาศัยความรู้ความชำนาญด้าน Coding แต่อย่างใด</p><br>
 
-<p><b>ขั้นตอนการดำเนินงาน</b> เป็นไปตาม diagram เริ่มจากเปิดหน้าเว็บ update.php กรอกข้อมูลหมายเลขประจำตัวประชาชน (13 หลัก) ของผู้ขอ แล้วกดปุ่ม ยืนยัน เพื่อเข้ารหัส SHA3 512 เป็นการคุ้มครองข้อมูลส่วนบุคคล จากนั้นกรอกข้อมูลความคืบหน้า แล้วกดปุ่ม Get Code เพื่อรับรหัส database แล้วกดปุ่ม 'OK' ระบบจะตรวจสอบความเรียบร้อยของข้อมูลและแจ้งเตือน ให้ปฏิบัติตามคำแนะนำของระบบ หากการกรอกข้อมูลสมบูรณ์ ระบบจะแจ้งให้กดปุ่ม Save เป็นการเสร็จสิ้นการปรับปรุงฐานข้อมูล จากนั้น ควรเข้าไปทดสอบระบบ e-Tracking ที่หน้าเว็บ track.php และกรอกข้อมูลเพื่อตรวจสอบว่า ระบบ e-Tracking ได้ update ข้อมูลสถานะคำขอแล้วหรือไม่ 
+<p><b>แนวคิดขั้นตอนการดำเนินงาน</b> เป็นไปตาม diagram เริ่มจากเปิดหน้าเว็บ update.php กรอกข้อมูลหมายเลขประจำตัวประชาชน (13 หลัก) ของผู้ขอ แล้วกดปุ่ม ยืนยัน เพื่อเข้ารหัส SHA3 512 เป็นการคุ้มครองข้อมูลส่วนบุคคลของผู้ขอข้อมูล จากนั้นกรอกข้อมูลความคืบหน้า แล้วกดปุ่ม Get Code เพื่อรับรหัส database แล้วกดปุ่ม 'OK' ระบบจะตรวจสอบความเรียบร้อยของข้อมูลและแจ้งเตือน ให้ปฏิบัติตามคำแนะนำของระบบ หากการกรอกข้อมูลสมบูรณ์ ระบบจะแจ้งให้กดปุ่ม Save เป็นการเสร็จสิ้นการปรับปรุงฐานข้อมูล จากนั้น ควรเข้าไปทดสอบระบบ e-Tracking ที่หน้าเว็บ track.php และกรอกข้อมูลเพื่อตรวจสอบว่า ระบบ e-Tracking ได้ update ข้อมูลสถานะคำขอนั้นแล้วหรือไม่ 
 </p>
 <br>
-<dd><strong>Source code:</strong> คำสั่งปรับปรุงฐานข้อมูล
+<dd><strong>Source code:</strong> คำสั่งให้คอมพิวเตอร์แม่ข่ายปรับปรุงฐานข้อมูล
 <textarea id='textBox1'>
 //Use PHP languange
 <?php
@@ -71,9 +68,9 @@ note over update.php: Click Save
 update.php-->>progress.php: Request content
 progress.php->update.php: Send content
 note over update.php: Delete tag
-note over update.php: Add code
+note over update.php: Add a new code
 update.php-->>progress.php: Write data
-track.php-->>progress.php: Track 
+track.php-->>progress.php: Search
 progress.php->track.php: Report
 </pre>
 </dd>
