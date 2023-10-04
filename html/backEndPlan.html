@@ -1,0 +1,156 @@
+﻿<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/book.css">
+<title>e-Request | Backend</title>
+	<script src="https://kietpawpan.github.io/workflow/underscore-min.js"></script>
+	<script src="https://kietpawpan.github.io/workflow/raphael-min.js"></script>
+	<script src="https://kietpawpan.github.io/workflow/sequence-diagram-min.js">	</script>
+</head>
+
+<body>
+<style>
+textarea {
+width: 100%;
+overflow:hidden;
+resize:none;
+height: scrollHeight;
+}
+
+table, td, th {
+  border: 1px solid;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+</style>
+
+<div id="wrapper">
+    <div id="container">
+
+        <section class="open-book">
+            <header>
+                <h1>ข้อเสนอโครงการพัฒนาระบบ e-Tracking Backend</h1>
+                <h6>MNRE-SLC-012</h6>
+            </header>
+            <article>
+    <h2 class="chapter-title">ระบบ e-Tracking Backend</h2>
+<dd>
+<strong>1. หลักการและเหตุผล</strong>
+</dd>
+<p>
+ในปัจจุบัน การปรับปรุง (update) ข้อมูลสถานะของคำขอข้อมูลข่าวสารในระบบติดตามคำขอข้อมูลข่าวสารของกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม (e-Tracking) 
+ยังใช้วิธีให้ผู้พัฒนาระบบบริการอิเล็กทรอนิกส์ (Frontend Developer) ดำเนินการแก้ไข source code ของฐานข้อมูลสถานะคำขอ 
+ซึ่งต้องใช้ความรอบคอบและระมัดระวังอย่างยิ่ง หากให้เจ้าหน้าที่อื่น เป็นผู้ดำเนินการแทน อาจไปลบหรือเติมรหัสคอมพิวเตอร์คลาดเคลื่อนได้โดยง่าย 
+หากมีรหัสผิดเพียงอักขระใดอักขระหนึ่ง จะทำให้ระบบ e-Tracking เสียหายทันที ดังนั้น เพื่อป้องกันความเสียหายดังกล่าว 
+กับเพื่ออำนวยความสะดวกในการปรับปรุงฐานข้อมูลสถานะคำขอโดยไม่ต้องอาศัยความรู้ความชำนาญด้าน Coding 
+อันจะทำให้ผู้ใช้งานระบบ e-Tracking ได้รับประสบการณ์ที่ดี สำนักงานปลัดกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม จึงจัดทำโครงการพัฒนาระบบสนับสนุนการปรับปรุงฐานข้อมูลของระบบติดตามสถานะคำขอข้อมูลข่าวสารของกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม (e-Tracking Backend) 
+เพื่อให้มีระบบ Backend สำหรับใช้ควบคุมการแก้ไข source code ของฐานข้อมูลของระบบ e-Tracking 
+โดยไม่ต้องเข้าถึงเครื่องแม่ขายจากระยะไกล (Remote Access) แต่อย่างใด จะทำให้การ update ฐานข้อมูลสถานะคำขอข้อมูลข่าวสารของกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อมเป็นไปอย่างสะดวก รวดเร็ว และเรียบร้อย</p><br>
+
+<dd>
+<strong>2. วัตถุประสงค์ของโครงการ</strong>
+</dd>
+<p>
+เพื่อพัฒนาระบบสนับสนุนการปรับปรุงฐานข้อมูลของระบบติดตามสถานะคำขอข้อมูลข่าวสารของกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม (e-Tracking Backend) 
+</p>
+<br>
+<dd>
+<strong>3. วิธีดำเนินงาน</strong>
+</dd>
+<p>การพัฒนาระบบ e-Tracking Backend เริ่มจากพิจารณาศึกษา source code ของระบบ e-Tracking แล้วออกแบบ/เขียนโปรแกรมเพื่อรับข้อมูลหมายเลขประจำตัวประชาชน (13 หลัก) ของผู้ขอ และทำการเข้ารหัสข้อมูลดังกล่าวตามมาตรฐานสากล เป็นการคุ้มครองข้อมูลส่วนบุคคลของผู้ขอข้อมูล รวมถึงรับข้อมูลสถานะคำขอเป็นข้อความ (text) โดยมีกระบวนการตรวจสอบความถูกต้องของข้อมูลนำเข้า (input validation) แล้วเริ่มกระบวนการ Backend โดยแปลงข้อความที่กรอก เป็นรหัสฝั่งแม่ข่าย (server-side script) ในภาษา PHP แล้วออกคำสั่งเรียกดูรหัสข้อมูลทั้งหมดในฐานข้อมูลของระบบ e-Tracking แล้ว ดำเนินการตัดแต่งรหัสดังกล่าว ตามข้อมูลนำเข้าที่เข้ารหัสไว้ แล้วต่อเติมกลับเป็นฐานข้อมูลรูปแบบเดิม เมื่อระบบได้ดำเนินการ update จนเสร็จสิ้นกระบวนการแล้ว ให้มีการแจ้งเตือนผู้ใช้งานทราบต่อไป ทั้งนี้ สามารถสรุปกรอบแนวคิดโครงสร้างการทำงานของระบบหลังบ้าน (Backend Operation System) ตาม sequence diagram ด้านล่างนี้
+  
+</p>
+<br>
+
+<dd>
+<pre id="txt" hidden>
+title: e-Tracking Backend Operation System
+note over Backend Program: Get user ID
+note over Backend Program: Get status Text
+note over Backend Program: Hash the ID
+note over Backend Program: Write PHP code
+note over Backend Program: Validate the Input
+Backend Program-->>Database: Request the database code
+Database->Backend Program: Return the database code
+note over Backend Program: Cut some tag
+note over Backend Program: Add a new code
+note over Backend Program: Add the cut tag
+Backend Program-->>Database: Write a new database
+note over Backend Program: Notify the user
+
+</pre>
+</dd>
+
+<br>
+<dd>
+<div id="diagram"></div>
+</dd>
+
+
+<br>
+<dd>
+<strong>4. ระยะเวลาดำเนินการ</strong>
+</dd>
+<p>ตุลาคม 2567 - กันยายน 2568</p>
+
+<br>
+<dd>
+<strong>5. แผนการดำเนินงาน</strong>
+</dd>
+<dd>
+<table align="left" style="color:black;width:100%;border: 1px solid;">
+<tr><th>กิจกรรม</th><th>ระยะเวลา</th></tr>
+<tr><td>1. ออกแบบระบบ Backend</td><td>ตุลาคม - ธันวาคม 2567</td></tr>
+<tr><td>2. เขียนโปรแกรม</td><td>มกราคม - มีนาคม 2568</td></tr>
+<tr><td>3. ทดสอบระบบ</td><td>เมษายน 2568</td></tr>
+<tr><td>4. จัดทำคู่มือปฏิบัติงาน</td><td>มิถุนายน - สิงหาคม 2568</td></tr>
+<tr><td>5. Deploy และเปิดใช้งานระบบ</td><td>พฤษภาคม-กันยายน 2568</td></tr>
+</table>
+</dd>
+<p>
+
+<br>
+<dd>
+<strong>6. งบประมาณ</strong>
+</dd>
+<p>ไม่มีการเสนอขอใช้งบประมาณ เนื่องจากหน่วยงานดำเนินการพัฒนาระบบเอง โดยใช้ทรัพยากรที่มีอยู่และทักษะด้านดิจิทัลของบุคลากร</p>
+<br>
+<dd>
+<strong>7. หน่วยงานรับผิดชอบ</strong>
+</dd>
+<p>กองกลาง (ส่วนข้อมูลข่าวสารและบริการร่วม)</p><p>สำนักงานปลัดกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม</p><p>โทร. 0 2265 6223-5
+
+
+<script>
+	var diagram = Diagram.parse(document.getElementById('txt').
+innerText)
+
+diagram.drawSVG('diagram',{theme:'simple'})
+</script>
+
+
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>1</li>
+                    <li>2</li>
+                </ol>
+            </footer>
+        </section>
+
+    </div>
+</div>
+
+
+</body>
+<!--JAVASCRIPT TEXTAREA FIT TEXT-->
+<script type="text/javascript">
+	for (var i = 1; i <=100; i++) {
+	document.getElementById('textBox' + i).style.height = document.getElementById('textBox' +i).scrollHeight+'px';
+}
+
+</script>
+</html>
