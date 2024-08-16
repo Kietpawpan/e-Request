@@ -28,5 +28,4 @@ Electronic Request for Information from A Thai Governmental Organization
 sequenceDiagram
   note over index.php: สร้างคำขอ
   index.php->>PrivateMailbox: คัดลอก วาง
-  PrivateMailbox->>GovMailbox
 ```
