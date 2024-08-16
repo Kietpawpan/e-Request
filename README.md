@@ -21,4 +21,7 @@ Electronic Request for Information from A Thai Governmental Organization
 4. การคุมครองข้อมูลส่วนบุคคลด้วย Secure Hash Algorithm 512 บิท
 
 ## ผลลัพธ์ลดระยะเวลาจาก 45 วัน เป็นภายใน 7 วัน
+```mermaid
+sequence-diagram
 
+```
