@@ -16,8 +16,9 @@ Electronic Request for Information from A Thai Governmental Organization
 
 ## ความรู้
 1. การออกแบบบริการดิจิทัล TDGA
-2. ภาษาสำหรับพัฒนา web application
-3. มาตการการพัฒนา app ภาครัฐ
+2. ภาษาสำหรับพัฒนา web application เป็น javaScript ระดับพื้นฐาน
+3. มาตการการพัฒนา app ภาครัฐ ของ DGA
+4. การคุมครองข้อมูลส่วนบุคคลด้วย Secure Hash Algorithm 512 บิท
 
 ## ผลลัพธ์ลดระยะเวลาจาก 45 วัน เป็นภายใน 7 วัน
 
