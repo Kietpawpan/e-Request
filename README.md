@@ -20,10 +20,14 @@ Electronic Request for Information from A Thai Governmental Organization
 3. มาตการการพัฒนา app ภาครัฐ ของ DGA
 4. การคุมครองข้อมูลส่วนบุคคลด้วย Secure Hash Algorithm 512 บิท
 
-## ผลลัพธ์ลดระยะเวลาจาก 45 วัน เป็นภายใน 7 วัน
+## ผลลัพธ์
+ลดระยะเวลาจาก 45 วัน เป็นภายใน 7 วัน
+
+## กลไกการทำงาน
 ```mermaid
 sequenceDiagram
-    Alice->>John: Hello John, how are you?
+    index.php->>Mailbox: copied and pasted
+    note over index.php: สร้างคำขอ
     John-->>Alice: Great!
     Alice-)John: See you later!
 
