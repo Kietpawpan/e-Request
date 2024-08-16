@@ -26,9 +26,7 @@ Electronic Request for Information from A Thai Governmental Organization
 ## กลไกการทำงาน
 ```mermaid
 sequenceDiagram
-    index.php->>Mailbox: copied and pasted
-    note over index.php: สร้างคำขอ
-    John-->>Alice: Great!
-    Alice-)John: See you later!
-
+  note over index.php: สร้างคำขอ
+  index.php->>Private Mailbox: คัดลอก วาง
+  Private Mailbox->>Gov Mailbox
 ```
