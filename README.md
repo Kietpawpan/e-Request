@@ -22,6 +22,9 @@ Electronic Request for Information from A Thai Governmental Organization
 
 ## ผลลัพธ์ลดระยะเวลาจาก 45 วัน เป็นภายใน 7 วัน
 ```mermaid
-sequence-diagram
+sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+    Alice-)John: See you later!
 
 ```
