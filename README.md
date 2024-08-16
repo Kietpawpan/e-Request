@@ -27,6 +27,6 @@ Electronic Request for Information from A Thai Governmental Organization
 ```mermaid
 sequenceDiagram
   note over index.php: สร้างคำขอ
-  index.php->>Private Mailbox: คัดลอก วาง
-  Private Mailbox->>Gov Mailbox
+  index.php->>PrivateMailbox: คัดลอก วาง
+  PrivateMailbox->>GovMailbox
 ```
