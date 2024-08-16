@@ -134,6 +134,8 @@ else if(text3=="องค์การบริหารจัดการก๊�
 else if(text3=="สำนักงานพัฒนาเศรษฐกิจจากฐานชีวภาพ"){oTel = "0 2141 7800";}
 else{oTel = "";}
 
+if(text=="" || text2=="" || house=="" || text3=="" || info1=="" || checkType=="" || obj=="" || tel==""){alert("โปรดกรอกข้อมูลให้ครบถ้วน");}
+else{
 
 document.getElementById("iRequest").value =
             "เรียน " + opener + "\n\nข้าพเจ้า " + text + " หมายเลขประจำตัวประชาชน " + text2 + " ที่อยู่ " + house + " มีความประสงค์ขอข้อมูลข่าวสารของ" + text3 +
@@ -160,6 +162,7 @@ document.getElementById("copySLC").innerHTML =
             "\n\nจึงเรียนมาเพื่อดำเนินการให้ตามความประสงค์ของข้าพเจ้าต่อไปด้วย จักขอบคุณมาก" +
             "\n\nขอแสดงความนับถือ" + "\n" + text + " ผู้ขอ\nโทร. " + tel;
 
+}
 }
 
 function copyForm() {
