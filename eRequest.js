@@ -1,5 +1,7 @@
 /* (c) 2023 MNRE-SLC | MIT License
- * iRequest.js | v2.0 | May 17, 2024
+ * iRequest.js 
+ * v2.1 | Sep 12, 2024: Bug fixed--ID validation, gmail functions, and scroll-top issue
+ * v2.0 | May 17, 2024
  * servicelinkcenter@mnre.go.th
  */
 
@@ -190,17 +192,18 @@ function sendGmail() {
   for (j1 = 0; j1 < z.length ;j1++) {
     text3 += z.elements[j1].value;
   }
+
 // Send by Gmail
    if(text3=="สำนักงานปลัดกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม"){
    window.open("https://mail.google.com/mail/?view=cm&fs=1&to=servicelinkcenter@mnre.go.th&cc=&su=ขอข้อมูลข่าวสารของราชการ&body=[วางข้อความตรงนี้ค่ะ]");}
 
-   if(text3=="กรมควบคุมมลพิษ"){
+   else if(text3=="กรมควบคุมมลพิษ"){
    window.open("https://mail.google.com/mail/?view=cm&fs=1&to=saraban@pcd.go.th&cc=servicelinkcenter@mnre.go.th&su=ขอข้อมูลข่าวสารของราชการ&body=[วางข้อความตรงนี้ค่ะ]");}
 
-  if(text3=="กรมการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อม"){
+  else if(text3=="กรมการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อม"){
    window.open("https://mail.google.com/mail/?view=cm&fs=1&to=saraban@dcce.mail.go.th&cc=servicelinkcenter@mnre.go.th&su=ขอข้อมูลข่าวสารของราชการ&body=[วางข้อความตรงนี้ค่ะ]");}
 
-if(text3=="สำนักงานนโยบายและแผนทรัพยากรธรรมชาติและสิ่งแวดล้อม"){
+else if(text3=="สำนักงานนโยบายและแผนทรัพยากรธรรมชาติและสิ่งแวดล้อม"){
    window.open("https://mail.google.com/mail/?view=cm&fs=1&to=saraban@onep.go.th&cc=servicelinkcenter@mnre.go.th&su=ขอข้อมูลข่าวสารของราชการ&body=[วางข้อความตรงนี้ค่ะ]");}
 
 
